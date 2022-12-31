@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "portfolio-navdeep"
+  },
+  "targets": {
+    "portfolio-navdeep": {
+      "hosting": {
+        "Portfolio": [
+          "portfolio-navdeep"
+        ]
+      }
+    }
+  }
+}
