@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/components/header/header.component';
 import { FooterComponent } from './common/components/footer/footer.component';
+import { AngularMaterialModule } from './core/modules/angular-material/angular-material.module';
+import { PrimengModule } from './core/modules/primeng/primeng.module';
+import { I18nModule } from './core/modules/i18n/i18n.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { FooterComponent } from './common/components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularMaterialModule,
+    BrowserAnimationsModule,
+    PrimengModule,
+    I18nModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
