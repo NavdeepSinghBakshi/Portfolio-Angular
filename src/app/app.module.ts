@@ -10,12 +10,14 @@ import { PrimengModule } from './core/modules/primeng/primeng.module';
 import { I18nModule } from './core/modules/i18n/i18n.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeComponent } from './common/components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
