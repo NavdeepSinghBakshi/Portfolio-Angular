@@ -1,0 +1,10 @@
+<div class="card">
+    <p class="text-primary fw-bold">Name - {{Project.name}}</p>
+    <p *ngIf="Project.from" class="fw-bold">From: {{Project.from}} To: {{Project.to}}</p>
+    <p *ngIf="Project.role" class="fw-bold">Role: {{Project.role}}</p>
+    <p>{{Project.description}}</p>
+    <p class="fw-bold">Key Deliverables</p>
+    <ul *ngFor="let key of Project.keys">
+        <li>{{key}}</li>
+    </ul>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <h2 class="text-primary">PROFESSIONAL EXPERIENCE</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <img width="60%" height="100%" src="https://yt3.ggpht.com/Ktez5srPkCOmNu1xifkh-0F2UbE5R5hDsviUx_ITf11y55-zX-XJGOSiOoyeEdRjw4pwBd1x=s900-c-k-c0x00ffffff-no-rj"
+                    alt="logo" />
+            </div>
+            <div class="col-md-10">
+                <p><b>CGI Information Systems and Management Consultants Pvt. Ltd </b></p>
+                <p><b>Location:</b> Bangalore</p>
+                <p><b>Designation:</b> Software Engineer</p>
+                <p><b>From:</b> June,2021 <b>To:</b> Current</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-primary">Skills</h2>
+        <app-skill></app-skill>
+    </div>
+    <div>
+        <h2 class="text-primary">Projects</h2>
+        <app-project></app-project>
+    </div>
+    <div>
+        <h2 class="text-primary">Hobbies</h2>
+        <ul *ngFor="let hobby of Hobbies">
+            <li>{{hobby.name}}</li>
+        </ul>
+    </div>
+</div>

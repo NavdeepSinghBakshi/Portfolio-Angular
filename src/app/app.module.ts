@@ -11,13 +11,15 @@ import { I18nModule } from './core/modules/i18n/i18n.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './common/components/home/home.component';
+import { ContactComponent } from './common/components/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

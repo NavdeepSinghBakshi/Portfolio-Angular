@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Technologies</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let technology of Technologies">
+                <td>{{technology.name}}</td>
+                <td><span class="bar"><span class="{{'rate'+technology.rate}}"></span></span></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>
+                    <span class="fw-bold w-10">1</span>
+                    <span class="fw-bold w-40">5</span>
+                    <span class="fw-bold w-50">10</span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="container">
+    <h2 class="text-primary">Tools</h2>
+    <div class="row">
+        <div class="bullet-list" style="column-count:2">
+            <ul *ngFor="let tool of Tools">
+                <li>{{tool.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.bar
+{   display: block;
+    height: 20px;
+    border: 1px solid #2187e7b3;
+    box-shadow: 0 0 10px #2187e7b3;
+}
+.bar span{
+    background: #2187e7b3;
+    height: 20px;
+    display: block;
+}
+.rate10{
+    width: 100%;
+}
+.rate9{
+    width: 90%;
+}
+.rate8{
+    width: 80%;
+}
+.rate7{
+    width: 70%;
+}
+.rate6{
+    width: 60%;
+}
+.rate5{
+    width: 50%;
+}
+tfoot tr td span{
+    display: inline-block;
+    text-align: right;
+}
+.w-10{
+    width: 10%;
+}
+.w-40{
+    width: 40%;
+}
+.w-50{
+    width: 50%;
+}
