@@ -11,5 +11,17 @@ export class ProjectCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  readMore(){debugger
+    var moreText = document.getElementById("more") as HTMLElement;
+    var btnText = document.getElementById("readMoreBtn") as HTMLElement;
+    if (moreText.style.display === "inline")
+    {
+      moreText.style.display = 'none';
+      btnText.innerHTML = "Read more ...";
+    }
+    else{
+      moreText.style.display = 'inline';
+      btnText.innerHTML = "Read less";
+    }
+  }
 }
