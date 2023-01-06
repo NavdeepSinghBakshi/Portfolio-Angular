@@ -1,0 +1,38 @@
+<div class="div">
+    <h2 class="text-primary text-center">Reactive Form Demo</h2>
+    <p class="text-primary">Key features</p>
+    <div class="mb-5">
+        <ul>
+            <li>
+                <p>Angular Material Dropdowns</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <p>Custom Pipes</p>
+            </li>
+        </ul>
+    </div>
+    <div class="row m-2">
+        <div class="col-sm-6">
+            <mat-form-field class="col-sm-6">
+                <mat-label>Technology</mat-label>
+                <mat-select #Technology>
+                    <mat-option *ngFor="let technology of Skills | unique : 'technologyId'"
+                        [value]="technology.technologyId">
+                        {{technology.technologyName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field class="col-sm-6">
+                <mat-label>Skill</mat-label>
+                <mat-select #Skill [disabled]="!Technology.value">
+                    <mat-option *ngFor="let skill of Skills | filter : 'technologyId' : Technology.value"
+                        [value]="skill.skillId">
+                        {{skill.skillName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

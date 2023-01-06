@@ -1,11 +1,12 @@
 export class EmployeeData {
     Skills = [
-        { skillId: 1, skillName: 'HTML' },
-        { skillId: 2, skillName: 'CSS' },
-        { skillId: 3, skillName: 'JavaScript'},
-        { skillId: 4, skillName: 'Angular' },
-        { skillId: 5, skillName: 'C#' },
-        { skillId: 6, skillName: '.Net Core' },
+        { skillId: 1, skillName: 'HTML', technologyId:1,technologyName:'Frontend'},
+        { skillId: 2, skillName: 'CSS',technologyId:1,technologyName:'Frontend' },
+        { skillId: 3, skillName: 'JavaScript',technologyId:1,technologyName:'Frontend'},
+        { skillId: 4, skillName: 'Angular' ,technologyId:1,technologyName:'Frontend'},
+        { skillId: 5, skillName: 'C#',technologyId:2,technologyName:'Backend'},
+        { skillId: 6, skillName: '.Net Core' ,technologyId:2,technologyName:'Backend'},
+        { skillId: 7, skillName: 'SQL' ,technologyId:3,technologyName:'Database'},
 
     ]
     Designations = [
