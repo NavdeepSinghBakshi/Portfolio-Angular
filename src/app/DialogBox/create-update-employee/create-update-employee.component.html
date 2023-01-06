@@ -1,0 +1,146 @@
+<mat-dialog-content>
+    <form [formGroup]="EmployeeForm">
+        <mat-tab-group class="pt-2" [selectedIndex]="selectedIndex" (selectedIndexChange)="tabChange($event)">
+            <mat-tab label="Basic Info">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-sm-5" style="pointer-events: none;">
+                            <mat-form-field class="col-sm-12">
+                                <mat-label>Employee Name</mat-label>
+                                <input matInput formControlName="EmployeeName">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-5">
+                            <mat-form-field class="col-sm-12">
+                                <mat-label>Employee Email</mat-label>
+                                <input matInput formControlName="Email" required (ngModelChange)="getUsername()">
+                                <mat-error *ngIf="EmployeeForm.controls['Email']?.errors?.required">
+                                    Employee Email should not be blank</mat-error>
+                                <mat-error *ngIf="EmployeeForm.controls['Email']?.errors?.pattern">
+                                    Email invalid'</mat-error>
+                                <mat-error *ngIf="EmployeeForm.controls['Email']?.errors?.emailRestricted">
+                                    Already present</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <mat-form-field class="col-sm-12">
+                                <mat-label>Employee Designation</mat-label>
+                                <mat-select formControlName="Designation">
+                                    <mat-option *ngFor="let Designation of designations"
+                                        [value]="Designation.designationId">
+                                        {{Designation.designationName}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="EmployeeForm.controls['Designation']?.errors?.required">
+                                    Employee Designation should not be blank</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-sm-5">
+                            <mat-form-field class="col-sm-12">
+                                <mat-label>Employee Department</mat-label>
+                                <mat-select formControlName="Department">
+                                    <mat-option *ngFor="let Department of Departments"
+                                        [value]="Department.departmentId">
+                                        {{Department.departmentName}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="EmployeeForm.controls['Department']?.errors?.required">
+                                    Employee Department should not be blank</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-5 text-center">
+
+                            <div class="custom-file">
+                                <img [src]="imageUrl" style="width:100px;height:100px">
+                                <input type="file" class="custom-file-input" id="customFile" name="myfile"
+                                    accept="image/png, image/jpeg, image/jpg" (change)="onFileSelect($event)"
+                                    #UploadFileInput>
+                            </div>
+
+                        </div>
+                    </div>-->
+                </div>
+            </mat-tab>
+            <mat-tab label="Skills">
+                <div class="container-fluid mb-2">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+                            <p-messages severity="info">
+                                <ng-template pTemplate>
+                                    <div class="p-ml-2"><b> Employee can only enter upto 3 Skills</b></div>
+                                </ng-template>
+                            </p-messages>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button mat-button color="primary" class="float-end" (click)="addSkill()"
+                                [disabled]="dynamicform.value.length == 3"><i class="bi bi-plus-circle-fill"></i>Add
+                                Skill</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div formArrayName="SkillList" *ngFor="let item of dynamicform.controls; let i = index;">
+                            <div [formGroupName]="i" class="row">
+                                <div class="col-sm-4">
+                                    <mat-form-field class="col-sm-12">
+                                        <mat-label>Skill Name</mat-label>
+                                        <mat-select #Empskill formControlName="SkillId" required
+                                            (ngModelChange)="disableSkillList()">
+                                            <mat-option *ngFor="let skill of Skills" [value]="skill.skillId"
+                                                [disabled]="skill.skillstatus">
+                                                {{skill.skillName}}</mat-option>
+                                        </mat-select>
+                                        <mat-error *ngIf="this.SkillList.controls[i].get('SkillId')?.errors?.required">
+                                            Skill Name should not be blank</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-3">
+                                    <section class="example-section mt-3">
+                                        Not certified &nbsp; <mat-slide-toggle formControlName="IsCertified"
+                                            (ngModelChange)=conditionValidation(i)>
+                                            Certified
+                                        </mat-slide-toggle>
+                                    </section>
+                                </div>
+                                <div class="col-sm-4">
+                                    <mat-form-field appearance="fill" class="col-sm-12">
+                                        <mat-label>Date you certified</mat-label>
+                                        <input matInput [matDatepicker]="startDatepicker" readonly
+                                            formControlName="CertificationCompletionDate"
+                                            [disabled]="CertifiedToggleState(i)">
+                                        <mat-datepicker-toggle matSuffix [for]="startDatepicker">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #startDatepicker></mat-datepicker>
+                                        <mat-error
+                                            *ngIf="this.SkillList.controls[i].get('CertificationCompletionDate')?.errors?.required">
+                                            Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-1 text-center mt-3 mx-auto cursor-pointer">
+                                    <a (click)="deleteSkill(i)">
+                                        <mat-icon color="primary">delete</mat-icon>{{' Delete'}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" [hidden]="employeeDialogData.dialogAction == 'Update'"
+        (click)="CreateandUpdateEmployee('Create')">Add</button>
+    <button mat-raised-button color="primary" (click)="CreateandUpdateEmployee('Update')" [hidden]="employeeDialogData.dialogAction == 'Create'">Update</button>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

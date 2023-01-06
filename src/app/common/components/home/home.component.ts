@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   downloadCV() {
-    console.log('12')
     let link = document.createElement('a');
     link.setAttribute('type', 'hidden');
     link.href = 'assets/resume/Navdeep.pdf';

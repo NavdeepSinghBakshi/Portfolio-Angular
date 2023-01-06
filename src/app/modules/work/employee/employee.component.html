@@ -1,0 +1,105 @@
+<div >
+    <button class="btn btn-success ms-2" routerLink="/work">Back to Home</button>
+</div>
+<div>
+    <p-table #EmployeeTable [value]="EmployeeData" dataKey="employeeId" [paginator]="true" [rows]="10"
+        [rowsPerPageOptions]="[5,10,15,20]" [autoLayout]="true"
+        [globalFilterFields]="['employeeName','email','designationName']"
+        paginatorDropdownAppendTo="body">
+
+        <ng-template pTemplate="caption">
+            <div>
+                <span class="p-input-icon-right mt-3">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" class="p-inputtext-sm" (input)="applyFilterGlobal($event)"
+                        placeholder="Search" />
+                </span>
+            </div>
+            <div class="mt-1 text-end">
+                    <button  class="btn btn-primary"
+                        (click)="CreateAndUpdateEmployee('Create')">Add
+                        Employee</button> 
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="employeeName">Employee Name<p-sortIcon field="employeeName"></p-sortIcon>
+                    <p-columnFilter type="text" field="employeeName" display="menu"></p-columnFilter>
+                </th>
+                <th pSortableColumn="email">Email<p-sortIcon field="email"></p-sortIcon>
+                    <p-columnFilter type="text" field="email" display="menu"></p-columnFilter>
+                </th>
+                <th pSortableColumn="designationName">Designation<p-sortIcon field="designationName"></p-sortIcon>
+                    <p-columnFilter type="text" field="designationName" display="menu"></p-columnFilter>
+                </th>
+                <th>Skills</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-expanded="expanded">
+            <tr>
+                <td><a>{{rowData.employeeName}}</a></td>
+                <td>{{rowData.email}}</td>
+                <td>{{rowData.designationName}}</td>
+                <td>
+                    <a href="#" [pRowToggler]="rowData">
+                        <i [ngClass]="expanded ? 'bi bi-chevron-down' : 'bi bi-chevron-left'"></i>
+                    </a>
+                </td>
+                <td class="threeDotsVertical">
+                    <button class="bi bi-three-dots iconbold" mat-icon-button [matMenuTriggerFor]="menu"
+                        aria-label="Example icon-button with a menu">
+                    </button>
+                    <mat-menu #menu="matMenu" style="text-align: end;">
+                        <button mat-menu-item (click)="CreateAndUpdateEmployee('Update',rowData)">
+                            <mat-icon color="primary" class="m-0">edit</mat-icon>EDIT
+                        </button>
+                        <button mat-menu-item (click)="deleteEmployee(rowData.employeeId)">
+                            <mat-icon style="color: red;" class="m-0">delete</mat-icon>DELETE
+                        </button>
+                    </mat-menu>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-rowData>
+            <tr>
+                <td colspan="10" dataKey="employeeId" class="chevron-bg">
+                    <div class="row pt-3 mx-5">
+                        <ng-container *ngIf="rowData.gEmployeeSkills.length == 0">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p-messages severity="error">
+                                        <ng-template pTemplate>
+                                            <div class="col-sm-4"></div>
+                                            <div class="p-ml-2 col-sm-4"><b>No Skill had been added for
+                                                    {{rowData.employeeName}}</b></div>
+                                            <div class="col-sm-4"></div>
+                                        </ng-template>
+                                    </p-messages>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="rowData.gEmployeeSkills.length > 0">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Skill Name</th>
+                                        <th>Certified</th>
+                                        <th>Certification Completion Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let skill of rowData.gEmployeeSkills">
+                                        <td>{{find_skillName_by_skillId(skill.skillId)}}</td>
+                                        <td>{{yes_no_for_certifiedSkill(skill.isCertified)}}</td>
+                                        <td>{{skill.certificationCompletionDate | date:"dd-MM-yyyy"}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ng-container>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

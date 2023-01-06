@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work-home.component.css']
 })
 export class WorkHomeComponent implements OnInit {
-
+  btnIcon : boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  openBox(){
+    this.btnIcon = false;
+ }
+ closeBox(){
+    this.btnIcon = true;
+ }
 }

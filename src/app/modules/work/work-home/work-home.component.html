@@ -1,1 +1,25 @@
-<p>work-home works!</p>
+<div [ngClass]="btnIcon ? 'navigation' : 'navigation-hover'">
+    <div *ngIf="!btnIcon" class="btn-closing" (click)="closeBox()">
+        <mat-icon>backspace</mat-icon>
+    </div>
+    <div *ngIf="btnIcon" class="btn-opening" (click)="openBox()">
+        <mat-icon>view_list</mat-icon>
+    </div>
+    <ul>
+        <li>
+            <a  routerLink="/work" (click)="closeBox()">
+                <span class="icon"><mat-icon>home</mat-icon></span>
+                <span class="title">Introduction</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/work/reactive-form" (click)="closeBox()">
+                <span class="icon"><mat-icon>ballot</mat-icon></span>
+                <span class="title">Reactive Form</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
