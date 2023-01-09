@@ -1,0 +1,44 @@
+<mat-card>
+    <form [formGroup]="srForm">
+        <div class="row">
+            <div class="row">
+
+                <div class="p-d-flex">
+
+                    <span class="p-input-icon-right">
+                        <i class="pi pi-search"></i>
+                        <input #searchField pInputText type="text" class="p-inputtext-sm col-sm-12" placeholder="Search"
+                            formControlName="estimatorFilter" />
+                    </span>
+                </div>
+                <mat-hint>Please enter minimum 1 char</mat-hint>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <div class="AddContainer">
+                        <mat-selection-list style="background-color:aliceblue" formControlName="selectedEstimator">
+                            <mat-list-option checkboxPosition="before" *ngFor="let item of estimatorlist" [value]="item">{{item.name}}
+                            </mat-list-option>
+                        </mat-selection-list>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-2 ">
+                    <button (click)="addEstimators()" class="mx-2" mat-raised-button color="primary">+</button>
+                    <button class="mt-1 mx-2" mat-raised-button color="primary" (click)="removeEstimators()">-</button>
+                </div>
+                <div class="col">
+                    <div class="AddContainer">
+                        <mat-selection-list  style="background-color:aliceblue" formControlName="assignedEstimator">
+                            <mat-list-option checkboxPosition="before"
+                                *ngFor="let item of assignedEstimatorList" [value]="item">{{item.name}}
+                            </mat-list-option>
+                        </mat-selection-list>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-card>

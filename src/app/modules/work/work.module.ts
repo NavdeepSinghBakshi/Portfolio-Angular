@@ -11,6 +11,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateUpdateEmployeeComponent } from 'src/app/DialogBox/create-update-employee/create-update-employee.component';
 import { CascadeDropdownComponent } from './cascade-dropdown/cascade-dropdown.component';
 import { SharedModule } from 'src/app/core/modules/shared/shared.module';
+import { TokenInterceptorComponent } from './token-interceptor/token-interceptor.component';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { AnimationComponent } from './animation/animation.component';
+import { UpdateListComponent } from './update-list/update-list.component';
+import { UpdateFavourateComponent } from 'src/app/reuseable-components/update-favourate/update-favourate.component';
+import { UpdateFavourateListComponent } from 'src/app/DialogBox/update-favourate-list/update-favourate-list.component';
 
 
 @NgModule({
@@ -20,7 +26,13 @@ import { SharedModule } from 'src/app/core/modules/shared/shared.module';
     IntroductionComponent,
     EmployeeComponent,
     CreateUpdateEmployeeComponent,
-    CascadeDropdownComponent
+    CascadeDropdownComponent,
+    TokenInterceptorComponent,
+    CustomDirectiveComponent,
+    AnimationComponent,
+    UpdateListComponent,
+    UpdateFavourateListComponent,
+    UpdateFavourateComponent
   ],
   imports: [
     CommonModule,

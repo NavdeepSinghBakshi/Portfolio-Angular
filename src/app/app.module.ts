@@ -12,6 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './common/components/home/home.component';
 import { ContactComponent } from './common/components/contact/contact.component';
+import { LoaderComponent } from './common/components/loader/loader.component';
+import { UserService } from './common/services/user.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './core/interceptor/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import { ContactComponent } from './common/components/contact/contact.component'
     FooterComponent,
     HomeComponent,
     ContactComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,11 @@ import { ContactComponent } from './common/components/contact/contact.component'
     I18nModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [UserService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,6 +7,23 @@ import { IAddEmployee, IEmployeeSkills } from '../interfaces/employee';
   providedIn: 'root'
 })
 export class WorkService {
+  fruits=[
+    {id:1,name:'Apple'},
+    {id:2,name:'Banana'},
+    {id:3,name:'Orange'},
+    {id:4,name:'Grapes'},
+    {id:5,name:'Kiwi'},
+    {id:6,name:'Strawberry'},
+    {id:7,name:'Watermelon'},
+    {id:8,name:'Pineapple'},
+    {id:9,name:'Mango'},
+    {id:10,name:'Cherry'},
+    {id:11,name:'Peach'},
+    {id:12,name:'Pomegranate'},
+    {id:13,name:'Papaya'},
+    {id:14,name:'Raspberry'},
+    {id:15,name:'Guava'},
+  ]
   data = new EmployeeData();
   constructor() { }
   getSkills(){
@@ -50,5 +67,18 @@ export class WorkService {
     let data = { employeeId:id+1, employeeName: payload.employeeName, email: payload.email, designationName: designation, gEmployeeSkills: array }
     this.data.Employees.push(data);
     return of(true);
+  }
+  getFruits()
+  {
+    return of(this.fruits);
+  }
+  getFruitsByName(name:string)
+  {
+    if(name.length == 0)
+    return of(this.fruits);
+     return of(this.fruits.filter((x:any)=>{
+      let n = x['name'] as string;
+      return  n.trim().toLowerCase().includes(name.trim().toLowerCase())
+    }));
   }
 }

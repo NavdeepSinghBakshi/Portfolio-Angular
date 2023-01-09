@@ -1,0 +1,13 @@
+export class ProductData {
+    products=[
+    {no:1, name:'AASHIRVAAD Atta with Multigrains',mp:340,image:'https://rukminim1.flixcart.com/image/416/416/ki96c280/flour/r/j/r/1-atta-with-multigrains-1-multigrain-flour-aashirvaad-original-imafy2vzhha44kgx.jpeg?q=70',r:9,xd:'1-Feb-23',w:5,dp:249,wt:'kg'},
+    {no:2, name:'Fortune Besan',mp:140,image:'https://rukminim1.flixcart.com/image/416/416/kqidx8w0/flour/r/4/5/besan-besan-fortune-original-imag4gb4hzv2qzvy.jpeg?q=70',r:9,xd:'4/16/2023',w:1,dp:78,wt:'kg'},
+    {no:3, name:'Fortune Everyday Basmati Rice (Long Grain)',mp:149,image:'https://rukminim1.flixcart.com/image/416/416/kqidx8w0/rice/r/p/x/white-everyday-na-basmati-rice-pouch-fortune-original-imag4gb4ynggnzgt.jpeg?q=70',r:9,xd:'10/14/2024',w:1,dp:89,wt:'kg'},
+    {no:4, name:'INDIA GATE Weight Watchers Special Brown Rice',mp:152,image:'https://rukminim1.flixcart.com/image/416/416/kjom6q80-0/rice/f/b/f/brown-weight-watchers-special-plain-rice-plastic-jar-india-gate-original-imafz7yqehvpqv4n.jpeg?q=70',r:8,xd:'9/19/2024',w:1,dp:117,wt:'kg'},
+    {no:5, name:'AASHIRVAAD Organic Moong Dal (Split)',mp:275,image:'https://rukminim1.flixcart.com/image/416/416/l3rmzrk0/pulses/a/9/e/-original-imaget5kf6nzffpx.jpeg?q=70',r:9,xd:'2/14/2023',w:1,dp:144,wt:'kg'},
+    {no:6, name:'Desi Choice Rajma Chithra (Whole)',mp:150,image:'https://rukminim1.flixcart.com/image/416/416/kngd0nk0/pulses/q/r/c/rajma-chitra-rajma-chithra-desi-choice-original-imag24myhpz4vge5.jpeg?q=70',r:8,xd:'2/19/2023',w:1,dp:127,wt:'kg'},
+    {no:7, name:'Fortune Indori Thick Poha',mp:55,image:'https://rukminim1.flixcart.com/image/416/416/l1dwknk0/rice/8/g/o/0-5-white-indori-thick-na-poha-pouch-fortune-na-original-imagcyvvn6wxsggs.jpeg?q=70',r:4,xd:'4/17/2023',w:500,dp:30,wt:'g'},
+    {no:8, name:'Fortune Soya Chunks',mp:200,image:'https://rukminim1.flixcart.com/image/416/416/kkzrpu80/soya-chunk/i/k/4/fortune-soya-chunks-pouch-pouch-soya-chunks-fortune-original-imagy7kwqydjcjv6.jpeg?q=70',r:8,xd:'9/6/2023',w:1,dp:147,wt:'kg'},
+    {no:9, name:'AASHIRVAAD Chaat Masala',mp:70,image:'https://rukminim1.flixcart.com/image/416/416/xif0q/spice-masala/r/z/s/100-chaat-masala-pouch-1-aashirvaad-powder-original-imagh8uf2pydth2h.jpeg?q=70',r:8,xd:'6/11/2023',w:100,dp:45,wt:'g'},
+    {no:10, name:'Catch Kitchen King Masala Powder',mp:80,image:'https://rukminim1.flixcart.com/image/416/416/kgv5x8w0/spice-masala/h/8/z/100-kitchen-king-masala-powder-box-catch-powder-original-imafxyf4cem6nfuw.jpeg?q=70',r:8,xd:'12/17/2023',w:100,dp:50,wt:'g'}]
+}

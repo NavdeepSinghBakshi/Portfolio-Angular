@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-11"> 
+    </div>
+    <div class="col-sm-1">
+      <i class="bi bi-x-lg" mat-dialog-close></i>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+<div>
+<app-update-favourate [input]=DialogData (selectedValue)="getSelectedFruits($event)">
+  <div class="certifiedS row pt-1">
+    <div class="col-sm-1">
+        <mat-icon color="primary" aria-hidden="false" class="copyrightcolor" aria-label="certified">copyright
+        </mat-icon>
+    </div>
+    <div class="col-sm-1 pt-1 text-primary">Certified</div>
+</div>
+</app-update-favourate>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close (click)="close()" color="primary">Add</button>
+</mat-dialog-actions>

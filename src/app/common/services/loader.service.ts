@@ -8,6 +8,7 @@ export class LoaderService {
 
   constructor() { }
 
+  // isLoading = new Subject<boolean>();
   public isLoading = new BehaviorSubject(false);
     show() {
         this.isLoading.next(true);

@@ -9,7 +9,7 @@ import {
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, filter, finalize, switchMap, take, tap } from 'rxjs/operators'
 import { UserService } from 'src/app/common/services/user.service';
-//import { LoaderService } from 'src/app/common/services/loader.service';
+import { LoaderService } from 'src/app/common/services/loader.service';
 import { NotificationService } from 'src/app/common/services/notification.service';
 import { IRefreshToken } from 'src/app/common/interfaces/user';
 import { Router } from '@angular/router';
@@ -19,17 +19,17 @@ export class TokenInterceptor implements HttpInterceptor {
   private isRefreshing = false;
   private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   service_count = 0;
-  constructor(private router: Router, private _userService: UserService, private _notificationService: NotificationService) { }
+  constructor(private router: Router, private loaderService:LoaderService, private _userService: UserService, private _notificationService: NotificationService) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this.service_count++;
-    //this.loaderService.show();
+    this.loaderService.show();
     request = this.addToken(request);
     return next.handle(request).pipe(
       finalize(() => {
         this.service_count--;
         if (this.service_count === 0) {
-          //this.loaderService.hide();
+          this.loaderService.hide();
         }
       }),
       catchError((error: any) => {
@@ -37,7 +37,7 @@ export class TokenInterceptor implements HttpInterceptor {
           return this.handle401Error(request, next);
         }
         const errorMessage = this.setError(error);
-        //this.loaderService.hide();
+        this.loaderService.hide();
 
         if (errorMessage == "Session Expired") {
           this._notificationService.info(errorMessage, '');

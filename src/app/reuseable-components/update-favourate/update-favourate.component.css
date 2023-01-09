@@ -1,0 +1,9 @@
+::ng-deep .mat-pseudo-checkbox.mat-pseudo-checkbox-checked{
+    background: blue;
+}
+.AddContainer{
+    height: 180px;
+    width: 260px;
+    overflow: scroll;
+    border:1px solid rgba(0,0,0,.42);
+}
