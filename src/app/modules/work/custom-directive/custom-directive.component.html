@@ -1,1 +1,42 @@
-<p>custom-directive works!</p>
+<h2 class="text-primary text-center">Custom Directive Demo</h2>
+<p class="text-primary fw-bold">Key features</p>
+<div class="mb-5">
+    <ul>
+        <li>
+            <p>Modifying behaviour of Element by Custom Directive</p>
+        </li>
+        <li>
+            <p>@HostListener / @HostBinding / Renderer2</p>
+        </li>
+        <li>
+            <p>Optimization with trackBy on *ngFor</p>
+        </li>
+    </ul>
+</div>
+<div class="mb-2">
+    <h3 class="text-center"><span class="m-5 p-1 bg-danger text-white">Price > 100</span><span
+            class="m-5 p-1 bg-success text-white">Price <= 100</span>
+    </h3>
+</div>
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Product Name</th>
+            <th>Weight</th>
+            <th>Price</th>
+            <th>Expiry Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products,let i = index,let f = first,let l = last, trackBy: trackByMethod">
+            <td>{{i+1}}</td>
+            <td class="d-none d-sm-block">{{product.name}}</td>
+            <td class="d-sm-none">{{product.name | slice : 0 : 20}}...</td>
+            <td>{{product.w + product.wt}}</td>
+            <td appRenderHighlight [rate]="product.dp">{{'Rs. '+product.dp}}</td>
+            <td>{{product.xd | date : 'd/M/yy'}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="m-5">.</div>

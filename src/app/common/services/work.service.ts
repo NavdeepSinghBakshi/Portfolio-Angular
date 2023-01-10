@@ -1,31 +1,21 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { EmployeeData } from 'src/assets/data/employee';
+import { ProductData } from 'src/assets/data/product'
 import { IAddEmployee, IEmployeeSkills } from '../interfaces/employee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkService {
-  fruits=[
-    {id:1,name:'Apple'},
-    {id:2,name:'Banana'},
-    {id:3,name:'Orange'},
-    {id:4,name:'Grapes'},
-    {id:5,name:'Kiwi'},
-    {id:6,name:'Strawberry'},
-    {id:7,name:'Watermelon'},
-    {id:8,name:'Pineapple'},
-    {id:9,name:'Mango'},
-    {id:10,name:'Cherry'},
-    {id:11,name:'Peach'},
-    {id:12,name:'Pomegranate'},
-    {id:13,name:'Papaya'},
-    {id:14,name:'Raspberry'},
-    {id:15,name:'Guava'},
-  ]
+  fruits=[{id:1,name:'Apple'},{id:2,name:'Banana'},{id:3,name:'Orange'},{id:4,name:'Grapes'},{id:5,name:'Kiwi'},{id:6,name:'Strawberry'},{id:7,name:'Watermelon'},{id:8,name:'Pineapple'},{id:9,name:'Mango'},{id:10,name:'Cherry'},{id:11,name:'Peach'},{id:12,name:'Pomegranate'},{id:13,name:'Papaya'},{id:14,name:'Raspberry'},{id:15,name:'Guava'},]
   data = new EmployeeData();
+  productData = new ProductData();
   constructor() { }
+  getProducts()
+  {
+    return of(this.productData.products)
+  }
   getSkills(){
     return of(this.data.Skills);
   }

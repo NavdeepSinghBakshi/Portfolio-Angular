@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkService } from 'src/app/common/services/work.service';
 
 @Component({
   selector: 'app-custom-directive',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./custom-directive.component.css']
 })
 export class CustomDirectiveComponent implements OnInit {
+  products : any;
+  constructor(private _workService : WorkService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(){
+   this.getProducts();
   }
-
+  getProducts(){
+    this._workService.getProducts().subscribe(data =>{
+       this.products = data;
+    })
+  }
+  trackByMethod(index:number,element:any){
+    return element.id;
+  }
 }
