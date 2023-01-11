@@ -26,7 +26,7 @@ export class UpdateListComponent implements OnInit {
       data: data,
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result.data.length > 0) {
+      if (result.data.length >= 0) {
         this.fruits=result.data;
       }
     });

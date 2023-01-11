@@ -18,7 +18,7 @@ export class UpdateFavourateListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getSelectedFruits(value: any) {
+  getSelectedFruits(value: any) {debugger
     this.selectedFruits = value;
   }
   close()
