@@ -24,7 +24,7 @@ import { TokenInterceptor } from './core/interceptor/token.interceptor';
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    LoaderComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

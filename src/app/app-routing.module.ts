@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'my-intro',loadChildren:()=>import('./modules/intro/intro.module').then(m=>m.IntroModule)},
   { path: 'work',loadChildren:()=>import('./modules/work/work.module').then(m=>m.WorkModule)},
   { path: 'blog',loadChildren:()=>import('./modules/blog/blog.module').then(m=>m.BlogModule)},
+  { path: 'heroku-app',loadChildren:()=>import('./modules/heroku-app/heroku-app.module').then(m=>m.HerokuAppModule)},
   { path: 'contact',component:ContactComponent}
 ];
 
