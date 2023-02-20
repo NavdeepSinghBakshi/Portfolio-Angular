@@ -1,0 +1,26 @@
+<h2 class="text-primary text-center">Rxjs operators Demo</h2>
+<p class="text-primary fw-bold">Key features</p>
+<div>
+<ul>
+    <li><p>Map to modify coming http call data</p></li>
+    <li><p>mergeMap to subscribe inner obserable data</p></li>
+    <li><p>forkJoin for parallel http calls</p></li>
+    <li><p>concatMap to delay data</p></li>
+    <li><p>Dynamic element creation</p></li>
+</ul>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>{{username}} have {{posts.length}} posts</h2>
+            <div *ngFor="let post of posts; let i = index">
+                <p>{{i+1 + '. ' + post.title}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>Notifications coming one by one</h2>
+            <div id="elContainer">
+            </div>
+        </div>
+    </div>
+</div>

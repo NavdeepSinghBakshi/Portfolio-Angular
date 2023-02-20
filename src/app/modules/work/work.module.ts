@@ -17,6 +17,7 @@ import { AnimationComponent } from './animation/animation.component';
 import { UpdateListComponent } from './update-list/update-list.component';
 import { UpdateFavourateComponent } from 'src/app/reuseable-components/update-favourate/update-favourate.component';
 import { UpdateFavourateListComponent } from 'src/app/DialogBox/update-favourate-list/update-favourate-list.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UpdateFavourateListComponent } from 'src/app/DialogBox/update-favourate
     AnimationComponent,
     UpdateListComponent,
     UpdateFavourateListComponent,
-    UpdateFavourateComponent
+    UpdateFavourateComponent,
+    RxjsComponent
   ],
   imports: [
     CommonModule,

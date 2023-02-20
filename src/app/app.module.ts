@@ -16,6 +16,7 @@ import { LoaderComponent } from './common/components/loader/loader.component';
 import { UserService } from './common/services/user.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './core/interceptor/token.interceptor';
+import { SafePipe } from './core/pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TokenInterceptor } from './core/interceptor/token.interceptor';
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    LoaderComponent
+    LoaderComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
