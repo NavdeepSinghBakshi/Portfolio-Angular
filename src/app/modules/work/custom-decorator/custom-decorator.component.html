@@ -1,0 +1,26 @@
+<h2 class="text-primary text-center">Custom Decorator Demo</h2>
+<p class="text-primary fw-bold">Key features</p>
+<div class="mb-5">
+    <ul>
+        <li>
+            <p>Eliminating ngOnChanges life cycle hook by custom decorator (Optimization technique)</p>
+        </li>
+        <li>
+            <p>Using map for hasting</p>
+        </li>
+    </ul>
+</div>
+<section class="container mt-2">
+    <div>
+        <label class="mx-2"><b>Choose Branch</b></label>
+        <select #dep (change)="0;">
+            <option disabled value="-1"  selected>Choose branch</option>
+            <option [value]="i" *ngFor="let dep of departments; index as i">{{dep.name}}</option>
+        </select>
+    </div>
+    <div>
+        <label class="mx-2"><b>Subject: </b></label>
+        <input (keyup.enter)="onDepartmentChange(dep.value,teacher.value);teacher.value='';" #teacher [disabled]="dep.value == '-1'">
+    </div>
+</section>
+<app-department [department]="selectedDep" [teacher]="thr"></app-department>

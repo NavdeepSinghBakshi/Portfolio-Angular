@@ -1,0 +1,59 @@
+<h2 class="text-primary text-center">Data Binding Demo</h2>
+<p class="text-primary fw-bold">Key features</p>
+<div class="mb-5">
+    <ul>
+        <li>
+            <p>String interpolation</p>
+        </li>
+        <li>
+            <p>Property binding</p>
+        </li>
+        <li>
+            <p>Event binding</p>
+        </li>
+        <li>
+            <p>Attribute directive like [ngStyle], [ngClass]</p>
+        </li>
+        <li>
+            <p>ng-template, ng-container, *ngTemplateOutlet</p>
+        </li>
+    </ul>
+</div>
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="text" (keyup)="setText($event)" placeholder="Type text" />
+            <div class="my-2">
+                <p class="text-primary fw-bold">Increase or Decrease Font Size</p>
+                <button class="mx-2 btn btn-danger" (click)="setSize('inc')">+</button>
+                <button class="mx-2 btn btn-danger" (click)="setSize('dec')">-</button>
+            </div>
+            <div>
+                <p class="text-primary fw-bold">Change Color</p>
+                <select (change)="setColor($event)">
+                    <option value="primary">Primary</option>
+                    <option value="success">Success</option>
+                    <option value="warning">Warning</option>
+                    <option value="danger">Danger</option>
+                </select>
+            </div>
+            <hr />
+            <p [style.fontSize.px]="textSize" [class]="textColor">{{text}}</p>
+        </div>
+        <div class="col-sm-6">
+            <div class="box" [ngStyle]="{'border-radius':boxColor == 'primary' ? '0%' : '50%'}"
+                [ngClass]="{'primary-background':boxColor=='primary','danger-background':boxColor=='danger'}"></div>
+            <button class="mt-2 btn btn-danger" (click)="changeBoxColor()">change shape</button>
+        </div>
+    </div>
+    <div>
+        <ng-template #brand let-data let-s="size">
+            <div>
+                <img width="50px" height="50px" style="border-radius: 50%;"
+                    src="https://pbs.twimg.com/profile_images/1351669955540893702/3Yp6M8BH_400x400.jpg" />
+                <p><b>&#160;&#160;&#160;{{data}}</b></p>
+            </div>
+        </ng-template>
+        <ng-container *ngTemplateOutlet="brand; context: {$implicit:'logo',size:'50px'}"></ng-container>
+    </div>
+</div>

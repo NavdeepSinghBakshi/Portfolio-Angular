@@ -18,6 +18,11 @@ import { UpdateListComponent } from './update-list/update-list.component';
 import { UpdateFavourateComponent } from 'src/app/reuseable-components/update-favourate/update-favourate.component';
 import { UpdateFavourateListComponent } from 'src/app/DialogBox/update-favourate-list/update-favourate-list.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { FilePreviewComponent } from './file-preview/file-preview.component';
+import { CustomDecoratorComponent } from './custom-decorator/custom-decorator.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { DepartmentComponent } from './department/department.component';
+import { FileInputDirective } from 'src/app/core/directives/file-input.directive';
 
 
 @NgModule({
@@ -34,7 +39,12 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     UpdateListComponent,
     UpdateFavourateListComponent,
     UpdateFavourateComponent,
-    RxjsComponent
+    RxjsComponent,
+    FilePreviewComponent,
+    CustomDecoratorComponent,
+    DataBindingComponent,
+    DepartmentComponent,
+    FileInputDirective
   ],
   imports: [
     CommonModule,

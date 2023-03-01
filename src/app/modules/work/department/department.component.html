@@ -1,0 +1,13 @@
+<div class="container">
+    <br/>
+    <ul>
+        <li *ngFor="let dep of records" class="text-primary">
+            Branch Name: {{dep.name}}
+            <ul>
+                <li *ngFor="let teacher of dep.teachers" class="text-danger">
+                    Subject Name: {{teacher}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

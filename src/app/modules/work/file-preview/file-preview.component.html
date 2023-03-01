@@ -1,0 +1,42 @@
+<h2 class="text-primary text-center">File-Preview Demo</h2>
+<p class="text-primary fw-bold">Key features</p>
+<div class="mb-5">
+    <ul>
+        <li>
+            <p>Getter and Setter</p>
+        </li>
+        <li>
+            <p>Generating custom image url</p>
+        </li>
+        <li>
+            <p>exportAs in custom directive to take its reference in template of file input element</p>
+        </li>
+        <li>
+            <p>Validations on import files (allowed only png, jpeg, pdf and below 1 mb size)</p>
+        </li>
+        <li>
+            <p>Taking component reference by @ViewChild</p>
+        </li>
+    </ul>
+</div>
+<div class="container mt-2">
+    <div class="text-center">
+        <input #file="fileControl" fileInput (error)="onFileInputError($event)" (fileChanged)="onFileChange($event)"
+            [size]="1" [mine]="['pdf','jpeg','png']" type="file">
+        <section class="preview-container" *ngIf="file.value">
+            <div class="image-preview" *ngIf="file.isImage; else filePreview">
+                <img [src]="file.fileUrl" [alt]="file.fileName">
+            </div>
+            <ng-template #filePreview>
+                <div class="file-preview">
+                    {{file.fileName}}
+                </div>
+            </ng-template>
+            <div>
+                <button (click)="file.triggerChange()" class="btn btn-primary m-2"><mat-icon>edit</mat-icon></button>
+                <button (click)="inputDirective.removeFile()"
+                    class="btn btn-danger m-2"><mat-icon>delete</mat-icon></button>
+            </div>
+        </section>
+    </div>
+</div>

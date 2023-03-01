@@ -1,0 +1,22 @@
+.primary{
+    color: blue;
+}
+.success{
+    color: green;
+}
+.danger{
+    color: red;
+}
+.warning{
+    color: purple;
+}
+.primary-background{
+    background-color: blue;
+}
+.danger-background{
+    background-color: red;
+}
+.box{
+    width:100px;
+    height: 100px;
+}
