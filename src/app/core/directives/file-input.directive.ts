@@ -97,7 +97,6 @@ export class FileInputDirective implements OnInit {
     }
   }
   private clean() {
-    debugger
     this.value = undefined;
     this.inputRef.value = null as unknown as string;
     this.isImage = false;

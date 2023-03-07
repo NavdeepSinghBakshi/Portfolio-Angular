@@ -6,70 +6,10 @@
         <mat-icon>view_list</mat-icon>
     </div>
     <ul>
-        <li>
-            <a  routerLink="/work" (click)="closeBox()">
-                <span class="icon"><mat-icon>home</mat-icon></span>
-                <span class="title">Introduction</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/data-binding" (click)="closeBox()">
-                <span class="icon"><mat-icon>folder</mat-icon></span>
-                <span class="title">Data-Binding</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/reactive-form" (click)="closeBox()">
-                <span class="icon"><mat-icon>ballot</mat-icon></span>
-                <span class="title">Reactive Form</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/cascading-dropdown" (click)="closeBox()">
-                <span class="icon"><mat-icon>domain</mat-icon></span>
-                <span class="title">Cascading Dropdown</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/update-list" (click)="closeBox()">
-                <span class="icon"><mat-icon>backup</mat-icon></span>
-                <span class="title">Update List</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/token-interceptor" (click)="closeBox()">
-                <span class="icon"><mat-icon>vpn_key</mat-icon></span>
-                <span class="title">Interceptor</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/custom-directive" (click)="closeBox()">
-                <span class="icon"><mat-icon>table_chart</mat-icon></span>
-                <span class="title">Directive</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/custom-decorator" (click)="closeBox()">
-                <span class="icon"><mat-icon>data_usage</mat-icon></span>
-                <span class="title">Decorator</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/animation" (click)="closeBox()">
-                <span class="icon"><mat-icon>live_tv</mat-icon></span>
-                <span class="title">Animation</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/rxjs" (click)="closeBox()">
-                <span class="icon"><mat-icon>trending_up</mat-icon></span>
-                <span class="title">Rxjs</span>
-            </a>
-        </li>
-        <li>
-            <a routerLink="/work/file-preview" (click)="closeBox()">
-                <span class="icon"><mat-icon> attach_file</mat-icon></span>
-                <span class="title">File-Preview</span>
+        <li *ngFor="let item of list">
+            <a routerLink="/work/{{item.link}}" (click)="closeBox()">
+                <span class="icon"><mat-icon>{{item.icon}}</mat-icon></span>
+                <span class="title">{{item.title}}</span>
             </a>
         </li>
     </ul>

@@ -1,16 +1,15 @@
 .bg-color{
     background-color: white;
 }
+header{
+    margin-top: 60px;
+}
 .lan{
     padding-top: 0;
     padding-right: 2.25rem;
     padding-bottom: 0;
     padding-left: 0.75rem;
     border: none;
-}
-.fixed-top{
-    position: sticky;
-    z-index: 2 !important;
 }
 .navbar-light .navbar-nav .nav-link{
     font-weight: 600;

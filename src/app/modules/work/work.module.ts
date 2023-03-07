@@ -23,6 +23,9 @@ import { CustomDecoratorComponent } from './custom-decorator/custom-decorator.co
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DepartmentComponent } from './department/department.component';
 import { FileInputDirective } from 'src/app/core/directives/file-input.directive';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
+import { ProductCardComponent } from 'src/app/reuseable-components/product-card/product-card.component';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { FileInputDirective } from 'src/app/core/directives/file-input.directive
     CustomDecoratorComponent,
     DataBindingComponent,
     DepartmentComponent,
-    FileInputDirective
+    FileInputDirective,
+    ProductListComponent,
+    ProductGalleryComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,

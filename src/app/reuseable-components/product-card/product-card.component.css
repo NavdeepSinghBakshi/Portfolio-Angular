@@ -1,0 +1,42 @@
+.product{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer !important;
+}
+
+.card {
+    border-radius: 0;
+    border: none;
+}
+
+.card-title {
+    font-size: small;
+}
+
+.card-body {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: small;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.title {
+    height: 50px;
+    width:200px;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+.selected {
+    box-shadow: 10px 10px 5px 0px rgba(220, 220, 220, 0.75);
+}

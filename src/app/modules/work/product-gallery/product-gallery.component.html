@@ -1,0 +1,12 @@
+<div class="container">
+    <section>
+        <span class="text-primary fw-bold">Weight</span>
+        <ul>
+            <li *ngFor="let item of weightFilter">
+                <input value="{{item.value}}" (change)="onChange($event)" type="{{item.type}}">{{item.weight+' Kg'}}
+            </li>
+        </ul>
+    </section><app-product-list>
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+    </app-product-list>
+</div>

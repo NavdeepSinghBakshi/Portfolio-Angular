@@ -17,12 +17,15 @@
         <li>
             <p>ng-template, ng-container, *ngTemplateOutlet</p>
         </li>
+        <li>
+            <p>autofocus</p>
+        </li>
     </ul>
 </div>
 <div class="container mt-2">
     <div class="row">
         <div class="col-sm-6">
-            <input type="text" (keyup)="setText($event)" placeholder="Type text" />
+            <input type="text" #t (keypress)="move($event)" (keyup)="setText($event,t,c)" maxlength="5" placeholder="Type text" />
             <div class="my-2">
                 <p class="text-primary fw-bold">Increase or Decrease Font Size</p>
                 <button class="mx-2 btn btn-danger" (click)="setSize('inc')">+</button>
@@ -30,7 +33,7 @@
             </div>
             <div>
                 <p class="text-primary fw-bold">Change Color</p>
-                <select (change)="setColor($event)">
+                <select #c (change)="setColor($event)">
                     <option value="primary">Primary</option>
                     <option value="success">Success</option>
                     <option value="warning">Warning</option>

@@ -14,9 +14,15 @@ export class DataBindingComponent implements OnInit {
 
   ngOnInit() {
   }
-  setText(event: any) {
+  setText(event: any, t: any, c: any) {
     const val = event.target.value;
     this.text = val;
+    if (t.value.length == t.getAttribute('maxlength'))
+      c.focus();
+  }
+  move(event : any){
+    if (event.keyCode === 32  && event.target.selectionStart === 0)
+      event.preventDefault();
   }
   setSize(operation: string) {
     if (operation == 'inc') {
@@ -26,12 +32,11 @@ export class DataBindingComponent implements OnInit {
       this.textSize -= 1;
     }
   }
-  setColor(event:any){
-     const val = event.target.value;
-     this.textColor = val;
+  setColor(event: any) {
+    const val = event.target.value;
+    this.textColor = val;
   }
-  changeBoxColor()
-  {
+  changeBoxColor() {
     this.boxColor == 'primary' ? this.boxColor = 'danger' : this.boxColor = 'primary';
   }
 }

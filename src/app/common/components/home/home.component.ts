@@ -7,10 +7,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  startDate = new Date("june 23, 2021 00:00:00").getTime();
+  expDate : string = '';
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.experienceTime();
+  }
+  experienceTime(){
+      var now = new Date().getTime();
+      var distance = now - this.startDate;
+      var days = Math.floor(distance/(1000*60*60*24));
+      var years = Math.floor(days / 365);
+      var months = Math.ceil((days-years*365)/30);
+    //  var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60*24));
+    //  var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    //  var seconds = Math.floor((distance % (1000*60)) / 1000);
+      this.expDate = years + "y " + months + "m";
   }
   downloadCV() {
     let link = document.createElement('a');

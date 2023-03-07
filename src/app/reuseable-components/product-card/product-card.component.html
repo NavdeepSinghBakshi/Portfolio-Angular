@@ -1,0 +1,27 @@
+<section [class.selected]="selected" class="product">
+    <div class="card text-center">
+        <div class="card-image card-overflow-hidden d-flex justify-content-center align-items-center">
+            <img src="{{product.image}}" alt="">
+        </div>
+        <div class="card-body">
+            <p class="card-title title">{{product.name}}</p>
+        </div>
+        <div class="card-body">
+            <p class="card-title text-start">
+                <span class="text-success">Rate - {{product.r}}/10</span>
+                <span class="text-muted float-end">EXP. {{product.xd | date}}</span>
+            </p>
+        </div>
+        <div class="card-body">
+            <p class="card-title text-start">
+                <span class="text-dark fs-5">{{product.dp}}
+                </span>
+                <span class="text-muted text-decoration-line-through p-1">{{product.mp}}
+                </span>
+                <span *ngIf="discount()>0" class="bg-success text-white p-1">{{discount() | number:'.0-0'}}%
+                </span>
+                <span class="text-muted float-end">@ {{product.w + '/' + product.wt}}</span>
+            </p>
+        </div>
+    </div>
+</section>

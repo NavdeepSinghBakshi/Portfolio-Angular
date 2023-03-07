@@ -8,6 +8,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { FilePreviewComponent } from './file-preview/file-preview.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { TokenInterceptorComponent } from './token-interceptor/token-interceptor.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'update-list', component: UpdateListComponent },
       { path: 'rxjs', component: RxjsComponent },
       { path: 'file-preview', component: FilePreviewComponent },
+      { path: 'products', component: ProductGalleryComponent}
     ]
   },
   { path: 'employee', component: EmployeeComponent }

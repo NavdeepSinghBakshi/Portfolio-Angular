@@ -9,7 +9,7 @@ import { LanguageService } from '../../services/language.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _languageService:LanguageService,public translate: TranslateService) { }
+  constructor(private _languageService: LanguageService, public translate: TranslateService) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +17,18 @@ export class HeaderComponent implements OnInit {
     this._languageService.LanguageChange(language);
     this.translate.setDefaultLang(language);
   }
+  toHome() {
+    let doc = document.getElementById("home");
+    doc?.scrollIntoView({ behavior: "smooth" });
+  }
+  toIntro() {
+    let doc = document.getElementById("intro");
+    doc?.scrollIntoView({ behavior: "smooth" });
+  }
+  toWork() {
+    let doc = document.getElementById("work");
+    doc?.scrollIntoView({ behavior: "smooth" });
+   }
   /*loggedin(){
     let user = localStorage.getItem('user') as string;
     this.user = JSON.parse(user);

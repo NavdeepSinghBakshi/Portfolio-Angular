@@ -9,7 +9,7 @@ import { SettingsService } from 'src/app/common/services/settings.service';
 })
 export class HeaderComponent implements OnInit {
   settings!: Settings;
-  constructor(private _settingsService : SettingsService) { 
+  constructor(private _settingsService: SettingsService) {
     this.settings = this._settingsService.settings;
   }
 
@@ -20,5 +20,16 @@ export class HeaderComponent implements OnInit {
   }
   scrollTop() {
     window.scrollTo(0, 0);
+  }
+  fullscreen() {
+    let elem = document.documentElement as any;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
+  }
+  closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
   }
 }
