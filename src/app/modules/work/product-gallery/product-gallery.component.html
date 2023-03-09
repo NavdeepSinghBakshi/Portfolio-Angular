@@ -1,4 +1,16 @@
-<div class="container">
+
+<h2 class="text-primary text-center">Products Demo</h2>
+<p class="text-primary fw-bold">Key features</p>
+<div class="mb-5">
+    <ul>
+        <li>
+            <p>@ContentChildren() decorator</p>
+        </li>
+        <li>
+            <p>ngAfterContentInit()</p>
+        </li>
+    </ul>
+</div><div class="container">
     <section>
         <span class="text-primary fw-bold">Weight</span>
         <ul>
@@ -7,6 +19,6 @@
             </li>
         </ul>
     </section><app-product-list>
-        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+        <app-product-card *ngFor="let product of products" [product]="product" (onRemove)="onRemoveEvent($event)"></app-product-card>
     </app-product-list>
 </div>

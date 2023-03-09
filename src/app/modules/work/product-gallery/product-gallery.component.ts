@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkService } from 'src/app/common/services/work.service';
+import { ProductEvent } from 'src/app/reuseable-components/product-card/product-card.component';
 
 @Component({
   selector: 'app-product-gallery',
@@ -28,18 +29,11 @@ export class ProductGalleryComponent implements OnInit {
   }
   onChange(event: any) {
 
-    if (event.target.checked) {
-      debugger
+    if (event.target.checked) {debugger
       this.tempArray = this.filter.filter((e: any) => e.w == event.target.value)
       this.products = [];
       this.newArray.push(this.tempArray);
-      for (let i = 0; i < this.newArray.length; i++) {
-        var firstArray = this.newArray[i];
-        for (let i = 0; i < firstArray.length; i++) {
-          var object = firstArray[i];
-          this.products.push(object);
-        }
-      }
+      this.products = this.newArray.flat();
     }
     else {
       debugger
@@ -47,16 +41,13 @@ export class ProductGalleryComponent implements OnInit {
       this.newArray = [];
       this.products = [];
       this.newArray.push(this.tempArray);
-      for (let i = 0; i < this.newArray.length; i++) {
-        var firstArray = this.newArray[i];
-        for (let i = 0; i < firstArray.length; i++) {
-          var object = firstArray[i];
-          this.products.push(object);
-        }
-      }
+      this.products = this.newArray.flat();
       if (this.products.length == 0)
         this.products = this.filter;
     }
+  }
+  onRemoveEvent(evt:ProductEvent){
+    this.products = this.products.filter((p:any)=>p.no !== evt.product.no)
   }
 }
 

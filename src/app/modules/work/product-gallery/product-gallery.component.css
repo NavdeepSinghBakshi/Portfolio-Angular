@@ -1,12 +1,12 @@
-ul{
+section ul{
     padding: 0%;
     margin: 0%;
 }
-ul li{
+section ul li{
     list-style-type: none;
     display: inline-block;
     margin-right: 10px;
 }
-ul li input{
+section ul li input{
     margin-right: 4px;
 }

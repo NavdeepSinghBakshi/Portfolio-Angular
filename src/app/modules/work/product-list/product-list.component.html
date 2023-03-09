@@ -1,3 +1,7 @@
-    <section>
-        <ng-content></ng-content>
-    </section>
+<div class="text-center">
+    <button class="btn btn-primary mx-2" (click)="changePhoto(-1)">Prev</button>
+    <button class="btn btn-primary mx-2" (click)="changePhoto(1)">Next</button>
+</div>
+<section>
+    <ng-content></ng-content>
+</section>
