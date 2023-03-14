@@ -11,7 +11,13 @@ export class WorkService {
   fruits=[{id:1,name:'Apple'},{id:2,name:'Banana'},{id:3,name:'Orange'},{id:4,name:'Grapes'},{id:5,name:'Kiwi'},{id:6,name:'Strawberry'},{id:7,name:'Watermelon'},{id:8,name:'Pineapple'},{id:9,name:'Mango'},{id:10,name:'Cherry'},{id:11,name:'Peach'},{id:12,name:'Pomegranate'},{id:13,name:'Papaya'},{id:14,name:'Raspberry'},{id:15,name:'Guava'},]
   data = new EmployeeData();
   productData = new ProductData();
+  count: number = 10;
+  projectList:any[] = [{ id: 1, projectName: 'To Do List' },{ id: 2, projectName: 'Employee Management' },{ id: 3, projectName: 'Hotel Mangement' },{ id: 4, projectName: 'Theme Change' },{ id: 5, projectName: 'Payroll' },{ id: 6, projectName: 'Wheather App' },{ id: 7, projectName: 'Clock' },{ id: 8, projectName: 'Excel' },{ id: 9, projectName: 'Book Mangement' },{ id: 10, projectName: 'White Card' },{ id: 11, projectName: 'Snake Ladder' },{ id: 12, projectName: 'Ecommerce App' },{ id: 13, projectName: 'Water Mangement' },{ id: 14, projectName: 'Animal' },{ id: 15, projectName: 'Face Screen' },{ id: 16, projectName: 'Routing' },{ id: 17, projectName: 'Fixed' },{ id: 18, projectName: 'Time App' },{ id: 19, projectName: 'Bag Game' },{ id: 20, projectName: 'Win Lose' },{ id: 21, projectName: 'Quiz APP' },{ id: 22, projectName: 'RXJS' },{ id: 23, projectName: 'Washing Machine' },{ id: 24, projectName: 'Ludo' },
+  ];
   constructor() { }
+  getProjectLists(size:number) {
+    return of(this.projectList.slice((size-1)*this.count,size*this.count));
+  }
   getProducts()
   {
     return of(this.productData.products)

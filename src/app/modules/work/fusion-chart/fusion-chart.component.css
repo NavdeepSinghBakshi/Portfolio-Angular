@@ -1,0 +1,65 @@
+.sidenav {
+  width: 150px;
+  position: fixed;
+  top: 150px;
+  left: 5%;
+  background: aqua;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 1px 0;
+  z-index: 1;
+}
+
+.sidenav a {
+  padding: 1%;
+  margin: 5%;
+  text-decoration: none;
+  font-size: 16px;
+  color: #2196F3;
+  display: block;
+  text-align: center;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  border-left: 6px solid #2196F3;
+  margin-top: 30px;
+  margin-left: 200px;
+  padding: 0px 10px;
+}
+
+.main h1 {
+  text-align: center;
+  color: #2196F3;
+}
+
+.table tr:nth-child(even) {
+  background: aqua
+}
+
+.table tr:nth-child(odd) {
+  background: whitesmoke
+}
+
+.table {
+  border: 2px solid black;
+}
+
+.table thead tr {
+  background: aqua
+}
+
+.table {
+  text-align: center;
+}
+
+.data h1 {
+  text-align: center;
+  border-top: 6px solid #2196F3;
+  border-bottom: 6px solid #2196F3;
+  color: #2196F3;
+  margin: 5%;
+}

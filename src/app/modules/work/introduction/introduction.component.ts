@@ -21,7 +21,11 @@ export class IntroductionComponent implements OnInit {
       { id: 8, link: 'animation', icon: 'live_tv', title: 'Animation' },
       { id: 9, link: 'rxjs', icon: 'trending_up', title: 'Rxjs' },
       { id: 10, link: 'file-preview', icon: 'attach_file', title: 'File-Preview' },
-      { id: 11, link: 'products', icon: 'add_shopping_cart', title: 'Products' }
+      { id: 11, link: 'products', icon: 'add_shopping_cart', title: 'Products' },
+      { id: 12, link: 'counter', icon: 'attach_money', title: 'Counter' },
+      { id: 13, link: 'dtl', icon: 'assignment', title: 'Dynamic Table Loading' },
+      { id: 14, link: 'fusion-chart', icon: 'bar_chart', title: 'Fusion Chart' },
+      { id: 15, link: 'dos', icon: 'credit_card', title: 'Data On Scroll' }
 
     ]
   }

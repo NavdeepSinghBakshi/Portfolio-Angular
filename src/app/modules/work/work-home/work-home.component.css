@@ -4,6 +4,7 @@
     bottom: 50%;
     right: 5%;
     cursor: pointer;
+    z-index: 5;
 }
 .btn-opening{
     position: absolute;
@@ -11,6 +12,7 @@
     bottom: 50%;
     right: 5%;
     cursor: pointer;
+    z-index: 5;
 }
 .navigation{
     position: fixed;
@@ -60,18 +62,16 @@
     height: 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
     line-height: 20px;
-    text-align: center;
+    padding-left: 20%;
 }
 .navigation ul li a .title,.navigation-hover ul li a .title{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 25px;
     line-height: 20px;
-    text-align: start;
+    text-align: center;
     white-space: nowrap;
 }
 .content{

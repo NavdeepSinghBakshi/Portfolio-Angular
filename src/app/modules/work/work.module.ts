@@ -26,7 +26,21 @@ import { FileInputDirective } from 'src/app/core/directives/file-input.directive
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
 import { ProductCardComponent } from 'src/app/reuseable-components/product-card/product-card.component';
+import { CounterComponent } from './counter/counter.component';
+import { DynamicTableLoadingComponent } from './dynamic-table-loading/dynamic-table-loading.component';
+import { FusionChartsModule } from "angular-fusioncharts";
 
+// Import FusionCharts library and chart modules
+import * as FusionCharts from "fusioncharts";
+import * as charts from "fusioncharts/fusioncharts.charts";
+import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import { FusionChartComponent } from './fusion-chart/fusion-chart.component';
+import { DataOnScrollComponent } from './data-on-scroll/data-on-scroll.component';
+
+// Pass the fusioncharts library and chart modules
+FusionChartsModule.fcRoot(FusionCharts, charts, FusionTheme);
+FusionCharts.options.creditLabel = false;
+FusionCharts.options['creditLabel']= false;
 
 @NgModule({
   declarations: [
@@ -50,7 +64,11 @@ import { ProductCardComponent } from 'src/app/reuseable-components/product-card/
     FileInputDirective,
     ProductListComponent,
     ProductGalleryComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CounterComponent,
+    DynamicTableLoadingComponent,
+    FusionChartComponent,
+    DataOnScrollComponent
   ],
   imports: [
     CommonModule,
@@ -59,7 +77,8 @@ import { ProductCardComponent } from 'src/app/reuseable-components/product-card/
     PrimengModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    FusionChartsModule
   ]
 })
 export class WorkModule { }

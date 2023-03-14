@@ -1,10 +1,12 @@
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormArray, AbstractControl, FormControl, } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { IAddEmployee, IEmployeeSkills } from 'src/app/common/interfaces/employee';
 import { NotificationService } from 'src/app/common/services/notification.service';
 import { ShareService } from 'src/app/common/services/share.service';
 import { WorkService } from 'src/app/common/services/work.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-create-update-employee',
@@ -26,8 +28,13 @@ export class CreateUpdateEmployeeComponent implements OnInit {
   employeeDialogData: any
   employeeDepartments: any
   @Inject(MAT_DIALOG_DATA) public data: any
+  maxDate : Date = new Date();
+  myFilter = (d: Date | null): boolean =>{
+    const day = (d || new Date()).getDay();
+    return day !== 0 && day !== 6;
+  };
 
-  constructor(private dialogRef: MatDialogRef<CreateUpdateEmployeeComponent>, private formBuilder: FormBuilder, private _workService: WorkService, private _notificationService: NotificationService, private _shareService: ShareService, @Inject(MAT_DIALOG_DATA) public EmployeeData: any) {
+  constructor(private dialogRef: MatDialogRef<CreateUpdateEmployeeComponent>, private formBuilder: FormBuilder, private _workService: WorkService, private _notificationService: NotificationService, private _shareService: ShareService, @Inject(MAT_DIALOG_DATA) public EmployeeData: any, private router : Router) {
     dialogRef.disableClose = true;
     this.employeeDialogData = EmployeeData;
     _shareService.employeeEmailsObs.subscribe((data) => {
@@ -297,5 +304,14 @@ export class CreateUpdateEmployeeComponent implements OnInit {
       this._notificationService.warning("Your Profile Pic size is " + file.size + " bytes", "Image uploaded Successfully")
     }
   }
-  
+  onDateChange(index: any){
+    let certificateDate = moment(this.SkillList.controls[index].get('CertificationCompletionDate')?.value);
+    let todayDate = moment(new Date());
+    let calcBusinessDays = 1 + (todayDate.diff(certificateDate,'days') * 5 -
+    (certificateDate.day() - todayDate.day()) * 2) /7;
+    if(todayDate.day() == 6) calcBusinessDays--;//SAT
+    if(certificateDate.day() == 0) calcBusinessDays--;//SUN
+
+  console.log(calcBusinessDays);
+  }
 }

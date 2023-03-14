@@ -1,9 +1,8 @@
 .product{
     display: inline-block;
-    margin: 10px;
-    padding: 10px;
+    margin: 8px;
+    padding: 4px;
     text-align: center;
-    border: 1px solid blue;
     border-radius: 10px;
     cursor: pointer !important;
 }
@@ -39,4 +38,14 @@ img {
 }
 .selected {
     box-shadow: 10px 10px 5px 0px blue;
+}
+:host-context(.discountLess) button{
+    color: #fd9e04;
+    background-color: rgba(253, 158, 4, 0.32);
+    border-color: #fd9e04;
+}
+:host-context(.discountMore) button{
+    color: #00d400;
+    background-color: rgba(16, 209, 16, 0.32);
+    border-color: #00d400;
 }

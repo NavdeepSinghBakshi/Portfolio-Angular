@@ -114,9 +114,9 @@
                                 <div class="col-sm-4">
                                     <mat-form-field appearance="fill" class="col-sm-12">
                                         <mat-label>Date you certified</mat-label>
-                                        <input matInput [matDatepicker]="startDatepicker" readonly
+                                        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="startDatepicker" readonly
                                             formControlName="CertificationCompletionDate"
-                                            [disabled]="CertifiedToggleState(i)">
+                                            [disabled]="CertifiedToggleState(i)" [max]="maxDate" (dateChange)="onDateChange(i)">
                                         <mat-datepicker-toggle matSuffix [for]="startDatepicker">
                                         </mat-datepicker-toggle>
                                         <mat-datepicker #startDatepicker></mat-datepicker>

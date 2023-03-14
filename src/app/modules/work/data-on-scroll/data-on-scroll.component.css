@@ -1,0 +1,47 @@
+.list {
+    position: relative;
+    width: 50%;
+  }
+  
+  .list ul{
+    position: relative;
+    margin: 3em;
+  }
+  .list ul li {
+    position: relative;
+    left: 0;
+    color: black;
+    list-style: none;
+    margin: 4px 0;
+    border-left: 2px solid #03a9f4;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .list ul li::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #03a9f4;
+    transform: scaleX(0);
+    transition: 0.5s;
+    transform-origin: left;
+  }
+  .list ul li:hover::before{
+  transform: scaleX(1);
+  }
+  .list ul li:hover{
+    left: 10px;
+  }
+  .list ul li span{
+    position: relative;
+    padding: 8px;
+    z-index: 1;
+    transition: 0.5s;
+    display: inline-block;
+  }
+  .list ul li:hover span{
+    color: white;
+    font-weight:bold;
+    font-size: large;
+  }

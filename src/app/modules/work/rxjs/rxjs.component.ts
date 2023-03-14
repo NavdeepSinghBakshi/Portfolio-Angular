@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { concatMap, delay, map, mergeMap } from 'rxjs/operators';
-import { forkJoin, from, of } from 'rxjs';
+import { concatMap, delay, map, mergeMap, skip, take } from 'rxjs/operators';
+import { forkJoin, from, Observable, of } from 'rxjs';
 import { RxjsService } from 'src/app/common/services/rxjs.service';
 import { DesignUtilityService } from 'src/app/common/services/design-utility.service';
 
@@ -43,6 +43,5 @@ export class RxjsComponent implements OnInit {
          })
       })
   }
-
 
 }

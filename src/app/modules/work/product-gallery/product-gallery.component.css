@@ -10,3 +10,23 @@ section ul li{
 section ul li input{
     margin-right: 4px;
 }
+:host ::ng-deep .title{
+    color: rgb(104, 92, 95);
+
+}
+.discountLess{
+    background-color: rgba(253, 158, 4, 0.32);
+}
+.discountLess h2{
+   color: #fd9e04;
+   font-weight: bold;
+   text-align: center;
+}
+.discountMore{
+    background-color: rgba(16, 209, 16, 0.32);
+}
+.discountMore h2{
+  color: #00d400;
+  font-weight: bold;
+  text-align: center;
+}

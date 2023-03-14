@@ -1,0 +1,8 @@
+<div class="list mt-5 mx-auto">
+    <ul style="height: 300px;overflow:scroll" (scroll)="onScroll($event)">
+        <li *ngFor="let project of ProjectLists">
+            <span>{{project.projectName}}</span>
+        </li>
+
+    </ul>
+</div>

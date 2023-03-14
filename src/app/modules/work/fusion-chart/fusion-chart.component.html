@@ -1,0 +1,56 @@
+<div class="sidenav">
+    <ng-container *ngFor="let item of EmployeeAnalysisDropDown;let i = index">
+      <a style="cursor:pointer" (click)="selectElement(i)">{{item}}</a>
+    </ng-container>
+  </div>
+  
+  <div class="main">
+    <h1>Analysis</h1>
+    <ng-container *ngIf="graph.index0">
+      <fusioncharts style="text-align:center" width="700" height="400" type="column3d"
+        [dataSource]="dataSourceEmployeeVsAge">
+      </fusioncharts>
+    </ng-container>
+    <ng-container *ngIf="graph.index1">
+      <fusioncharts style="text-align:center" width="700" height="400" type="doughnut2d"
+        [dataSource]="dataSourceEmployeeVsSalary">
+      </fusioncharts>
+    </ng-container>
+    <ng-container *ngIf="graph.index2">
+      <fusioncharts style="text-align:center" width="700" height="400" type="msbar2d"
+        [dataSource]="dataSourceEmployeeVsSkills">
+      </fusioncharts>
+    </ng-container>
+    <div class="data">
+      <h1>Data</h1>
+    </div>
+    <div class="container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Sr. no</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Frontend Rating</th>
+            <th scope="col">Backend Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of EmployeeData;let i = index">
+            <th scope="row">{{i}}</th>
+            <td>{{item.employeeName}}</td>
+            <td>{{item.employeeAge}}</td>
+            <td>{{item.employeeSalary}}</td>
+            <td>{{item.employeeNoOfFrontendSkills}}</td>
+            <td>{{item.employeeNoOfBackendSkills}}</td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="p-5">.</div>
+  <!--<button (click)="listadd()" class="btn btn-success"> add list </button>
+  <ul id="list">
+  </ul>-->
